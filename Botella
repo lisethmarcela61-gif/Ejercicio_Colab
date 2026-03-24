@@ -1,0 +1,29 @@
+class Botella:
+  def __init__(self, codigo,tamaño):
+    self.codigo = codigo
+    self.tamaño = tamaño
+  def get_codigo(self):
+    return self.codigo
+
+  def set_datos(self):
+    pass
+  def ver_info(self):
+    pass
+
+class Base_datos:
+  #CRUD
+  def __init__(self):
+    self.lista_Botellas = []
+  def agregar_Botella(self, nuevo_objeto):
+    self.lista_Botellas.append(nuevo_objeto)
+    print(nuevo_objeto)
+    print(self.lista_Botellas[0])
+
+# zona de codigo principal 
+obj_base_datos = Base_datos() # creo la base de datos
+info_codigo = input("escriba el codigo de la Botella: ")
+info_tamaño = input("escriba el tamaño de la Botella: ")
+
+obj_Botella = Botella(info_codigo, info_tamaño)
+obj_base_datos.agregar_Botella(obj_Botella)# --> obj argumento
+print(obj_Botella)
